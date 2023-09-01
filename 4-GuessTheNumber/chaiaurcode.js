@@ -9,10 +9,12 @@ console.log(guessedNumber);
 const guessedNumberArray = [];
 const guesses = document.querySelector('.lastResult');
 let remainingGuesses = guesses.innerText;
+
 const hint = document.querySelector('#hint');
 hint.style.backgroundColor = 'black';
 hint.style.borderRadius = '15px';
 hint.style.padding = '8px';
+
 if (randomNumber === 100) {
   const hintRange = randomNumber;
   hint.innerHTML = `Number lies between ${
@@ -38,7 +40,10 @@ form.addEventListener('submit', function (e) {
     remainingGuesses--;
     console.log(remainingGuesses);
     guesses.innerText = remainingGuesses;
-
+    //prev guess
+    if (guessedNumberArray.length > 5) {
+      guesses.style.backgroundColor = 'orange';
+    }
     if (randomNumber === numberGuess) {
       form.style.backgroundColor = 'green';
     }
