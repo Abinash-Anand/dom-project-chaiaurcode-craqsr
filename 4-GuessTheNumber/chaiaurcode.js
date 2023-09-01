@@ -38,8 +38,12 @@ form.addEventListener('submit', function (e) {
     remainingGuesses--;
     console.log(remainingGuesses);
     guesses.innerText = remainingGuesses;
+
     if (randomNumber === numberGuess) {
       form.style.backgroundColor = 'green';
+    }
+    if (remainingGuesses === 0) {
+      guesses.style.backgroundColor = 'red';
     }
   }
 });
