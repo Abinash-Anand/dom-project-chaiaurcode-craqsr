@@ -1,7 +1,7 @@
 console.log('Project 5');
 const keyId = document.querySelector('.key');
-document.body.addEventListener(
-  'keypress',
+window.addEventListener(
+  'keydown',
   function (e) {
     console.log(e.key);
     console.log(e.code);
